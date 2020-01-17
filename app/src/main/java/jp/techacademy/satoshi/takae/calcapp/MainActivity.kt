@@ -6,6 +6,9 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import android.content.Intent
 import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.activity_main2.*
 
 class MainActivity : AppCompatActivity(),View.OnClickListener {
@@ -13,18 +16,23 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        override fun onClick(v:View){
-            if (v.id == R.id.button1){
-                
-            }else if (v.id == R.id.button2){
+        override fun onClick(v:View) {
 
-            }else if (v.id == R.id.button3){
+            EditText editText1=(EditText)findViewById(R.id.editText1)
+            EditText editText2=(EditText)findViewById(R.id.editText2)
 
-            }else if (v.id == R.id.button4){
-
-            }
+            String str1 = editText1.getText().toString()
+            String str2 = editText2.getText().toString()
+            
+            int num1 = Integer.parseInt(str1)
+            int num2 = Integer.parseInt(str2)
+            int result = num1 + num2
+            TextView textView1 = (TextView)findViewById(R.id.textView)
+            String str3 = String.valueOf(result)
+            textView1.setText(str3)
         }
 
+        }
 
         button1.setOnClickListener(this)
         button2.setOnClickListener(this)
